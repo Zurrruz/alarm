@@ -886,8 +886,9 @@ GameObject:
   - component: {fileID: 1365214770}
   - component: {fileID: 1365214772}
   - component: {fileID: 1365214773}
+  - component: {fileID: 1365214774}
   m_Layer: 0
-  m_Name: Fall (32x32)
+  m_Name: Thief
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1022,6 +1023,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1365214774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365214769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f524fc80001c6e4d96fd2f2c9a973a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1697614712
 GameObject:
   m_ObjectHideFlags: 0
@@ -1034,6 +1047,7 @@ GameObject:
   - component: {fileID: 1697614715}
   - component: {fileID: 1697614714}
   - component: {fileID: 1697614713}
+  - component: {fileID: 1697614717}
   m_Layer: 0
   m_Name: Alarm
   m_TagString: Untagged
@@ -1213,6 +1227,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1697614717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697614712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c12559a3b76da1429ae4894e1e06c36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _alarm: {fileID: 1697614713}
 --- !u!1 &2146908326
 GameObject:
   m_ObjectHideFlags: 0

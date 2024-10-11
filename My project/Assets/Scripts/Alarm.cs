@@ -8,16 +8,14 @@ public class Alarm : MonoBehaviour
     [SerializeField] private float _maxVolume;
     [SerializeField] private float _volumeUpStep;
 
-    private float _currentVolume;
-
     private Coroutine _currentCoroutine;
 
-    private void Start()
+    private void Awake()
     {
         _audioSource.volume = _minVolume;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void StartAlarm()
     {
         StopCurrentCoroutine();
 
@@ -27,7 +25,7 @@ public class Alarm : MonoBehaviour
         _currentCoroutine = StartCoroutine(ChangesVolume(_maxVolume));
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    public void StopAlarm()
     {
         StopCurrentCoroutine();
 
@@ -42,14 +40,9 @@ public class Alarm : MonoBehaviour
 
     private IEnumerator ChangesVolume(float targetVolume)
     {
-        float percentage = 0;
-
-        _currentVolume = _audioSource.volume;
-
         while (_audioSource.volume != targetVolume)
         {
-            _audioSource.volume = Mathf.MoveTowards(_currentVolume, targetVolume, percentage);
-            percentage += Time.deltaTime * _volumeUpStep;
+            _audioSource.volume = Mathf.MoveTowards(_audioSource.volume, targetVolume, _volumeUpStep * Time.deltaTime);
 
             yield return null;
         }
